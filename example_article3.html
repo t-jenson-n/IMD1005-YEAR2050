@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="icon" href="https://placehold.co/42x42">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/example_article3.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
+</head>
+<body class="grid layout">
+    <div id='imgViewer' class="imgViewer hidden"> </div>
+
+    <header>
+        <a href="#main" class="skip">Skip to main content</a>
+        <a class="title" href="index.html"> YEAR 2050</a>
+        <nav>  
+            <a href="example_article1.html"><button>Article 1</button></a> 
+            <a href="example_article2.html"> <button>Article 2</button></a>
+            <a href="example_article3.html"> <button>Article 3</button></a>
+        </nav>
+        <button class="icon" onclick="ToggleDarkMode()">
+            <span id="btn_darkmode" class="material-symbols-outlined"> dark_mode
+            </span>
+        </button>
+    </header>
+
+    <main id="main">
+        <div class="span card">
+            <h1>Title</h1>        
+        </div>
+        <div id="gallery" class="gallery">
+             <!-- requires full size image file -->
+            <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+            <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+            <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+            <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+            <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+            <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+            <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+            <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+
+        </div>
+
+    </main>
+
+    <footer>
+        Return to 2025
+    </footer>
+
+    <script src="scripts/dark-mode.js"></script>
+    <script src="scripts/gallery.js"></script>
+    
+</body>
+</html>

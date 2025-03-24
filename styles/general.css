@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+.skip {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+body {
+    color: rgb(32, 32, 32);
+    background-color: rgb(227, 227, 222);
+    font-family: Noto Sans, sans-serif;
+    font-size: 20px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+
+header {
+    padding:25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    padding: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    display: grid;
+    gap: 30px;
+}
+
+footer {
+    color: #031902;
+    background-color:rgba(193, 194, 188, 0.25);
+    text-align: center;
+    padding: 25px;
+    font-size: smaller;
+}
+
+.title {
+    color: rgb(5, 48, 49);
+    font-size: 60px;
+    font-family: Bebas Neue, sans-serif;
+    transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+
+.title:hover {
+    color: rgb(140, 140, 140);
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 200;
+    font-family: Raleway, sans-serif;
+    color: rgb(14, 14, 14);
+}
+
+h2 {
+    color: rgb(18, 18, 18);
+    font-size: 40px;
+    font-weight: 200;
+    font-family: Raleway, sans-serif;
+    
+}
+
+h3 {
+    color: rgb(18, 18, 18);
+    font-size: 35px;
+    font-weight: 400;
+    font-family: Raleway, sans-serif;
+}
+
+.grid {
+    background-color: (193, 226, 59);
+    display: grid;
+}
+
+.layout {
+    grid-template-rows: 140px auto 75px;
+}
+
+.span {
+    grid-column: span 2;    
+}
+
+.card {
+    border-width: 2px; 
+    background-color: rgba(193, 194, 188, 0.25);
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+button {
+    color: rgb(50, 60, 12);
+    background-color: rgb(193, 194, 188);
+    border: none;
+    font-family: Raleway, sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: color 0.25s, border-color 0.25s, background 0.25s;
+    line-height: 1em;
+}
+
+button:hover {
+    background-color: rgb(10, 46, 63);
+    color: rgb(136, 219, 224);
+    transition-duration: 0.4s;
+}
+
+a {
+    text-decoration: none;
+}
+
+.center {
+    justify-self: center;
+}
+
+/* to center light/dark mode icon vertically in button*/
+.icon {
+    display: flex;
+}
+
+
+/* DARK MODE */
+body.darkMode {
+    color: rgb(227, 227, 222);
+    background-color: rgb(26, 26, 2);
+}
+
+.darkMode footer {
+    color: rgb(182, 183, 101);
+    background: none;
+}
+
+.darkMode .title {
+    color: rgb(182, 183, 101);
+
+}
+
+.darkMode h1 {
+    color: rgb(182, 183, 101);
+
+}
+
+.darkMode h2 {
+    color: rgb(227, 227, 222);
+}
+
+.darkMode h3 {
+    color: rgb(227, 227, 222);
+}
+
+.darkMode button {
+    color: #eee;
+    background-color: rgba(94, 96, 94, 0.287);
+}
+
+.darkMode button:hover {
+    background-color: rgb(182, 183, 101);
+    color: rgb(19, 63, 10);
+    transition-duration: 0.4s;
+}
+
+.darkMode .title:hover {
+    color: rgb(236, 236, 236);
+    text-decoration: none;
+}
+
+.darkMode .card {
+    background-color: rgba(110, 110, 110, 0.093);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 880px) {
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 2px;
+    }
+    .layout {
+        grid-template-rows: auto auto 75px;
+    }
+    button{
+        margin: 2px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    footer {
+        margin: auto;
+    }
+}
