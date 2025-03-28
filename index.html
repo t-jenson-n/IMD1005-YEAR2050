@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="icon" href="images/favicon.jpg">
+    <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/index.css">
@@ -17,16 +17,20 @@
     
     <header>
         <a href="#main" class="skip">Skip to main content</a>
-        <a class="title" href="index.html">Year 2050</a>
+
+        <button class="icon" onclick="ToggleLightMode()">
+            <span id="btn_lightmode" class="material-symbols-outlined"> light_mode
+            </span>
+        </button>
         <nav>  
             <a href="fashion.html"><button>fashion</button></a> 
             <a href="installation.html"> <button>installation art</button></a>
             <a href="music.html"> <button>music</button></a>
         </nav>
-        <button class="icon" onclick="ToggleDarkMode()">
-            <span id="btn_darkmode" class="material-symbols-outlined"> dark_mode
-            </span>
-        </button>
+        <a class="title" href="index.html">2050</a>
+
+
+
     </header>
 
 
@@ -35,7 +39,7 @@
     <main id="main">
         <div class="center span card">
             
-            <img class="wide" src="https://placehold.co/2400x1000" alt="placeholder">
+            <img class="wide" src="images/train.jpg" alt="futuristic city, trains, and plant towers">
         </div>
 
         <section class="span"> 
@@ -79,24 +83,16 @@
                 <h3>About </h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nihil libero quidem officiis, tenetur accusamus ex numquam placeat dolorum dolor non nesciunt exercitationem laborum? Sint voluptates ipsa voluptas repudiandae unde.</p>
             </div>
-
-
-            <h2>use to see example pages</h2>
-            <nav>  
-                <a href="example_article1.html"><button>Article 1</button></a> 
-                <a href="example_article2.html"> <button>Article 2</button></a>
-                <a href="example_article3.html"> <button>Article 3</button></a>
-            </nav>
             
             
         </section>
     </main>
 
     <footer>
-        Return to 2025
+        <a href="credits.html"><button>Credits</button></a>     
     </footer>
 
-    <script src="scripts/dark-mode.js"></script>
+    <script src="scripts/light-mode.js"></script>
 
 </body>
 </html>

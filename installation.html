@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Installation Art</title>
-    <link rel="icon" href="images/favicon.jpg">
+    <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/installation.css">
@@ -14,19 +14,22 @@
 
 </head>
 <body class="grid layout">
-    
+<div id='imgViewer' class="imgViewer hidden"> </div>
+
     <header>
         <a href="#main" class="skip">Skip to main content</a>
-        <a class="title" href="index.html">Year 2050</a>
+
+        <button class="icon" onclick="ToggleLightMode()">
+            <span id="btn_lightmode" class="material-symbols-outlined"> light_mode
+            </span>
+        </button>
         <nav>  
             <a href="fashion.html"><button>fashion</button></a> 
             <a href="installation.html"> <button>installation art</button></a>
             <a href="music.html"> <button>music</button></a>
         </nav>
-        <button class="icon" onclick="ToggleDarkMode()">
-            <span id="btn_darkmode" class="material-symbols-outlined"> dark_mode
-            </span>
-        </button>
+        <a class="title" href="index.html">2050</a>
+
     </header>
 
 
@@ -34,12 +37,12 @@
     
     <main id="main">
         <div class="card sidebar">
-            <h2>Title</h2>
+            <h2>What is Installation Art?</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nihil libero quidem officiis, tenetur accusamus ex numquam placeat dolorum dolor non nesciunt exercitationem laborum? Sint voluptates ipsa voluptas repudiandae unde.
             <br><br>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nihil libero quidem officiis, tenetur accusamus ex numquam placeat dolorum dolor non nesciunt exercitationem laborum? Sint voluptates ipsa voluptas repudiandae unde.
             </p>
-
+            <br>
             <h2>Title</h2> 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nihil libero quidem officiis, tenetur accusamus ex numquam placeat dolorum dolor non nesciunt exercitationem laborum? Sint voluptates ipsa voluptas repudiandae unde.
             <br><br>
@@ -48,7 +51,7 @@
         </div>
 
         <div class="card">
-            <h1>Title</h1>
+            <h1>The Future Of Installation and Immersive Art</h1>
             
             <img src="https://placehold.co/600x400" alt="placeholder">
             <a class="link" href="">Title</a>
@@ -76,15 +79,32 @@
             </p>
             <br>
 
+            <br>
+            <h2>Gallery</h2>
+            <div id="gallery" class="gallery">
+                <!-- requires full size image file -->
+               <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+               <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+               <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+               <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+               <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+               <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+               <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+               <img src="https://placehold.co/600x400" alt="placeholder" data-full_image=""> 
+           </div>
         </div>
+
+        
+
     </main>
 
-
     <footer>
-        Return to 2025
+        <a href="credits.html"><button>Credits</button></a>     
     </footer>
 
-    <script src="scripts/dark-mode.js"></script>
+    <script src="scripts/light-mode.js"></script>
+    <script src="scripts/gallery.js"></script>
+
 
 </body>
 </html>

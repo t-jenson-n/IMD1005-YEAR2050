@@ -24,7 +24,7 @@ section {
     width: 100vw;
     height: 60vh;
     object-fit: cover;
-    object-position: center;
+    object-position: bottom;
 }
 
 .card {
@@ -32,8 +32,8 @@ section {
 }
 
 
-/* DARK MODE */
-.darkMode .card {
+/* LIGHT MODE */
+.lightMode .card {
     background: none;
 }
 
