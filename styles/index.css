@@ -3,9 +3,9 @@ body {
 }
 
 main {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    max-width: none;
+    max-width: 1200px;
     margin: none;
 }
 
@@ -27,10 +27,14 @@ section {
     object-position: bottom;
 }
 
-.card {
-    background: none;
+
+.span {
+    grid-column: span 3;    
 }
 
+.card.span {
+    background: none;
+}
 
 /* LIGHT MODE */
 .lightMode .card {

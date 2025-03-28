@@ -1,9 +1,30 @@
 
-main {
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: start;
-    max-width: 1200px;
+body {
+    grid-template-rows: auto 1fr auto;
+}
 
+main {
+    align-items: start;
+    max-width: none;
+
+}
+
+section {
+    max-width: 1200px;
+    grid-template-columns: 1.5fr 2fr;
+    align-items: center;
+    padding: 25px;
+    margin: 0 auto;
+    display: grid;
+    gap: 30px;
+}
+
+.wide  {
+    display: flex;
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover;
+    object-position: center;
 }
 
 .card.title {
@@ -12,24 +33,23 @@ main {
     align-self: center;
 }
 
+.card {
+    background: none;
+}
+
+.span {
+    grid-column: span 2;    
+}
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 900px) {
     main {
         grid-template-columns: 1fr 1fr;
     }
-    .card:last-child {
-        grid-column: span 2;
-    }
 }
+
 
 @media screen and (max-width: 760px) {
-    .card:first-child {
-        grid-column: span 2;
-    }
-}
-
-@media screen and (max-width: 600px) {
     main {
         grid-template-columns: 1fr;
         padding-left: 0;
