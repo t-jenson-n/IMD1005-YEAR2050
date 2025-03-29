@@ -14,7 +14,7 @@ section {
     grid-template-columns: 1.5fr 2fr;
     align-items: center;
     padding: 25px;
-    margin: 0 auto;
+    margin: 0;
     display: grid;
     gap: 30px;
 }
@@ -39,6 +39,11 @@ section {
 
 .span {
     grid-column: span 2;    
+}
+
+/* lightmode */
+.lightMode .card {
+    background: none;
 }
 
 /* MEDIA QUERIES */
