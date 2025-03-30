@@ -1,10 +1,17 @@
-
+/* CORE SECTIONS */
 main {
     grid-template-columns: 1fr 3fr;
     align-items: start;
     max-width: 1500px;
 }
 
+/* CARDS */
+.card {
+    background: none;
+}
+.lightMode .card {
+        background: none;
+}
 .card.sidebar {
     border-width: 2px; 
     border-color:black;
@@ -12,50 +19,63 @@ main {
     border-radius: 10px;
     padding: 20px;
 }
-
-.card {
-    background: none;
-}
-
-.link {
-    color: rgb(214, 206, 206);
-    font-size: 35px;
-    font-family: Raleway, sans-serif;
-    font-weight: 400;
-    transition: color 0.25s, border-color 0.25s, background 0.25s;
-}
-
-.link:hover {
-    color: var(--green);
-    text-decoration: none;
-}
-
-
-/* LIGHT MODE */
-
-.lightMode h1 {
-    color: var(--black);
-}
-
-.lightMode .link {
-    color: var(--black);
-}
-
-.lightMode .link:hover {
-    color: grey;
-    text-decoration: none;
-}
-
-.lightMode .card {
-        background: none;
-}
-
 .lightMode .card.sidebar {
     background-color: rgba(110, 110, 110, 0.093);
-
 }
 
+
+/* GALLERY */
+.gallery {
+    
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.gallery img {
+    height: 300px;
+    object-fit: cover; 
+    object-position: center;
+    width: 480px;
+}
+.gallery .lightMode .card {
+    background: none;
+}
+.gallery .lightMode h1 {
+    color: rgb(236, 236, 236);
+}
+.imgViewer {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    display: grid;
+    place-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.5s;
+}
+.imgViewer img {
+    max-width: 80vw;
+    max-height: 80vh;
+}
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
 /* MEDIA QUERIES */
+@media screen and (width < 860px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media screen and (max-width: 860px) {
     main {
         grid-template-columns: 1fr;
@@ -71,74 +91,6 @@ main {
     }
 }
 
-
-
-
-
-
-/* gallery */
-
-
-.imgViewer {
-    position: fixed;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99;
-    display: grid;
-    place-content: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    transition: opacity 0.5s;
-}
-
-.imgViewer img {
-    max-width: 80vw;
-    max-height: 80vh;
-
-}
-.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.gallery {
-    
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    margin-right: 0px;
-    margin-left: 0px;
-}
-
-.gallery img {
-    height: 300px;
-    object-fit: cover; 
-    object-position: center;
-    width: 480px;
-}
-
-.card {
-    background: none;
-}
-
-/* LIGHT MODE */
-.gallery .lightMode .card {
-    background: none;
-}
-
-.gallery .lightMode h1 {
-    color: rgb(236, 236, 236);
-}
-
-
-/* MEDIA QUERIES */
-@media screen and (width < 860px) {
-    .gallery {
-        grid-template-columns: 1fr 1fr;
-    }
-}
 @media screen and (width < 600px) {
     .gallery {
         grid-template-columns: 1fr;

@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Climate+Crisis&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Stalinist+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Climate+Crisis&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Stalinist+One&display=swap&family=Orbitron:wght@400..900&display=swap');
 
-
-
+/* SKIP LINKS */
 .skip {
     position: absolute;
     left: -10000px;
@@ -12,12 +10,13 @@
     overflow: hidden;
 }
 
+
+/* CORE SECTIONS */
 body {
     --green: rgb(134, 173, 33);
     --green2: rgb(94, 116, 16);
     --yellow: rgb(221, 181, 19);
     --yellow2: rgb(210, 136, 9);
-
     --black: rgb(19, 18, 13);
     --white: rgb(221, 222, 217);
     --dgrey: rgb(28, 27, 25);
@@ -31,6 +30,10 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+body.lightMode {
+    color: var(--black);
+    background-color: var(--white);
 }
 
 header {
@@ -58,22 +61,52 @@ footer {
     text-align: center;
     padding: 15px;
     font-size: smaller;
+    height: auto;
+    width: 100vw;
+}
+.lightMode footer {
+    color: rgb(26, 27, 24);
+    background: none;
 }
 
+
+/* LAYOUTS */
+.grid.layout {
+    grid-template-rows: 140px auto 75px;
+    background-color: (193, 226, 59);
+    display: grid;
+}
+
+.span {
+    grid-column: span 2;    
+}
+
+.center {
+    justify-self: center;
+    text-align: center;
+}
+
+
+/* TITLE/HEADING STYLES */
 .title {
     color: var(--green);
     font-size: 60px;
-    /* font-family: Bebas Neue, sans-serif; */
-    font-family: Climate Crisis, sans-serif;
     font-family: orbitron, sans-serif;
     font-weight: 900;
     display: flex;
     align-content: right;
     transition: color 0.25s, border-color 0.25s, background 0.25s;
 }
+.lightMode .title {
+    color: var(--yellow);
 
+}
 .title:hover {
     color: var(--white);
+    text-decoration: none;
+}
+.lightMode .title:hover {
+    color: var(--black);
     text-decoration: none;
 }
 
@@ -83,13 +116,19 @@ h1 {
     font-family: Raleway, sans-serif;
     color: var(--white);
 }
+.lightMode h1 {
+    color: var(--black);
+
+}
 
 h2 {
     color: var(--white);
     font-size: 40px;
     font-weight: 200;
     font-family: Raleway, sans-serif;
-    
+}
+.lightMode h2 {
+    color: var(--black);
 }
 
 h3 {
@@ -98,67 +137,65 @@ h3 {
     font-weight: 400;
     font-family: Raleway, sans-serif;
 }
-
-.grid {
-    background-color: (193, 226, 59);
-    display: grid;
+.lightMode h3 {
+    color: var(--black);
 }
 
-.layout {
-    grid-template-rows: 140px auto 75px;
-}
 
-.span {
-    grid-column: span 2;    
-}
-
+/* CARDS */
 .card {
-
-    /* background-color: rgba(193, 194, 188, 0.065); */
     border-radius: 10px;
     padding: 20px;
 }
-
+.lightMode .card {
+    background-color: rgba(47, 47, 47, 0.059);
+    border-radius: 10px;
+    padding: 20px;
+}
 .card.info {
-    border-width: 1px; 
-    border-style: solid;
-    border-color: var(--dgrey);
+    border: 1px solid var(--dgrey);
     background-color: var(--dgrey);
     border-radius: 10px;
     padding: 20px;
 }
-
+.lightMode .card.info {
+    border-color: var(--black);
+    background-color: rgba(56, 56, 53, 0.066);
+}
 .card.info:hover {
-    border-width: 1px; 
-    border-style: solid;
-    border-color: var(--green2);
+    border: 1px solid var(--green2);
     background: none;
     border-radius: 10px;
     padding: 20px;
     transition: color 0.25s, border-color 0.25s, background 0.25s;
-
+}
+.lightMode .card.info:hover {
+    border-color: var(--yellow);
 }
 
+/* LINKS */
 button {
     color: var(--green2);
-    /* color: var(--green); */
-
     background: none;
-
     border: 2px;
     border-style: solid; 
     font-family: Raleway, sans-serif;
     border-radius: 60px;
     cursor: pointer;
     padding: 10px 20px;
-    /* transition: color 0.25s, border-color 0.25s, background 0.25s; */
     line-height: 1em;
     transition-duration: 0.5s;
-
 }
-
+.lightMode button {
+    color: var(--black);
+}
 button:hover {
     background-color: var(--green);
+    color: var(--black);
+    transition-duration: 0.5s;
+}
+.lightMode button:hover {
+    background-color: var(--yellow);
     color: var(--black);
     transition-duration: 0.5s;
 }
@@ -171,11 +208,25 @@ a {
     text-decoration: none;
 }
 
-.center {
-    justify-self: center;
-    text-align: center;
-
+.link {
+    color: var(--white);
+    font-size: 35px;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    transition: color 0.25s, border-color 0.25s, background 0.25s;
 }
+.link:hover {
+    color: var(--green);
+    text-decoration: none;
+}
+.lightMode .link {
+    color: var(--black);
+}
+.lightMode .link:hover {
+    color: var(--yellow2);
+}
+
+
 
 /* to center light/dark mode icon vertically in button*/
 .icon {
@@ -184,73 +235,10 @@ a {
 
 
 
-
-
-/* LIGHT MODE */
-body.lightMode {
-    color: var(--black);
-    background-color: var(--white);
-}
-
-.lightMode footer {
-    color: rgb(26, 27, 24);
-    background: none;
-}
-
-.lightMode .title {
-    color: var(--yellow);
-
-}
-
-.lightMode h1 {
-    color: var(--black);
-
-}
-
-.lightMode h2 {
-    color: var(--black);
-}
-
-.lightMode h3 {
-    color: var(--black);
-}
-
-.lightMode button {
-    color: var(--black);
-}
-
-.lightMode button:hover {
-    background-color: var(--yellow);
-    color: var(--black);
-    transition-duration: 0.5s;
-}
-
-.lightMode .title:hover {
-    color: var(--black);
-    text-decoration: none;
-}
-
-.lightMode .card {
-    background-color: rgba(47, 47, 47, 0.059);
-    border-radius: 10px;
-    padding: 20px;
-}
-
-
-.lightMode .card.info {
-    border-color: var(--black);
-    background-color: rgba(56, 56, 53, 0.066);
-}
-
-.lightMode .card.info:hover {
-    border-color: var(--yellow);
-    background: none;
-}
-
 /* MEDIA QUERIES */
 @media screen and (max-width: 880px) {
     header {
-        display: flex;
+        /* display: flex; */
         flex-wrap: wrap;
         padding-bottom: 2px;
     }
@@ -260,5 +248,18 @@ body.lightMode {
     button{
         margin: 2px;
     }
-
+    .footer {
+        background: none;
+    }
 }
+
+/* 
+@media screen and (max-width: 700px) {
+    header {
+        padding: none;
+        margin: none;;
+    }
+    .nav {
+        padding: none;
+    }
+}   */
