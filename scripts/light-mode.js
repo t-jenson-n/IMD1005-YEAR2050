@@ -1,12 +1,21 @@
 function ToggleLightMode() {
-    document.body.classList.toggle('lightMode')
-
-    let $btn = document.getElementById('btn_lightmode')
-
+    document.body.classList.toggle('lightMode');
+    
     if (document.body.classList.contains('lightMode')) {
-        $btn.innerText = 'dark_mode'
+        localStorage.setItem('lightMode', 'enabled');
+        document.getElementById('btn_lightmode').textContent = 'dark_mode';
     } else {
-        $btn.innerText = 'light_mode'
+        localStorage.setItem('lightMode', 'disabled');
+        document.getElementById('btn_lightmode').textContent = 'light_mode';
     }
-   
+}
+
+if (localStorage.getItem('lightMode') === 'enabled') {
+    document.body.classList.add('lightMode');
+    document.getElementById('btn_lightmode').textContent = 'dark_mode';
+} else {
+    // Explicitly set dark mode if no preference or preference is disabled
+    document.body.classList.remove('lightMode');
+    localStorage.setItem('lightMode', 'disabled');
+    document.getElementById('btn_lightmode').textContent = 'light_mode';
 }

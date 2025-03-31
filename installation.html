@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/installation.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
 
@@ -16,21 +16,41 @@
 <body class="grid layout">
 <div id='imgViewer' class="imgViewer hidden"> </div>
 
-    <header>
-        <a href="#main" class="skip">Skip to main content</a>
+<header>
+    <a href="#main" class="skip">Skip to main content</a>
 
-        <button tabindex="0" class="icon" onclick="ToggleLightMode()">
-            <span id="btn_lightmode" class="material-symbols-outlined"> light_mode
-            </span>
+    <div class="header-left">
+        <button tabindex="0" class="light-toggle" onclick="ToggleLightMode()">
+            <span id="btn_lightmode" class="material-symbols-outlined">light_mode</span>
         </button>
+        <button tabindex="0" class="menu-toggle" id="menu-toggle">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </div>
+    
+    <nav class="desktop-nav">  
+        <a tabindex="0" href="fashion.html">Fashion</a> 
+        <a tabindex="0" href="installation.html" class="active">Installation Art</a>
+        <a tabindex="0" href="music.html">Music</a>
+        <a tabindex="0" href="credits.html">Meet the Team</a>
+    </nav>
+    
+    <div id="mobile-nav" class="mobile-nav">
         <nav>  
-            <a href="fashion.html"><button tabindex="0">fashion</button></a> 
-            <a href="installation.html"> <button tabindex="0">installation art</button></a>
-            <a href="music.html"> <button tabindex="0">music</button></a>
+            <a tabindex="0" href="fashion.html">Fashion</a> 
+            <a tabindex="0" href="installation.html">Installation Art</a>
+            <a tabindex="0" href="music.html" class="active">Music</a>
+            <a tabindex="0" href="credits.html">Meet the Team</a>
         </nav>
+        <button tabindex="0" class="menu-close" id="menu-close">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    
+    <div class="header-right">
         <a tabindex="0" class="title" href="index.html">2050</a>
-
-    </header>
+    </div>
+</header>
 
 
 

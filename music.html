@@ -7,7 +7,11 @@
     <link rel="icon" href="images/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="styles/reset.css" rel="stylesheet"/>
+    <link href="styles/general.css" rel="stylesheet"/>
     <link href="styles/music.css" rel="stylesheet"/>
+
+
 </head>
 <body class="grid layout">
     <header>
@@ -23,18 +27,18 @@
         </div>
         
         <nav class="desktop-nav">  
-            <a href="fashion.html">Fashion</a> 
-            <a href="installation.html">Installation Art</a>
-            <a href="music.html" class="active">Music</a>
-            <a href="credits.html">Meet the Team</a>
+            <a tabindex="0" href="fashion.html">Fashion</a> 
+            <a tabindex="0" href="installation.html">Installation Art</a>
+            <a tabindex="0" href="music.html" class="active">Music</a>
+            <a tabindex="0" href="credits.html">Meet the Team</a>
         </nav>
         
         <div id="mobile-nav" class="mobile-nav">
             <nav>  
-                <a href="fashion.html">Fashion</a> 
-                <a href="installation.html">Installation Art</a>
-                <a href="music.html" class="active">Music</a>
-                <a href="credits.html">Meet the Team</a>
+                <a tabindex="0" href="fashion.html">Fashion</a> 
+                <a tabindex="0" href="installation.html">Installation Art</a>
+                <a tabindex="0" href="music.html" class="active">Music</a>
+                <a tabindex="0" href="credits.html">Meet the Team</a>
             </nav>
             <button tabindex="0" class="menu-close" id="menu-close">
                 <span class="material-symbols-outlined">close</span>
@@ -62,7 +66,7 @@
                 <div id="spatial-sound" class="spatial-container">
                     <div class="spatial-indicator">🎵</div>
                     <div class="spatial-text">Move cursor to experience 3D audio</div>
-                    <button id="toggle-spatial" class="toggle-audio">Enable 3D Sound</button>
+                    <button tabindex="0" id="toggle-spatial" class="toggle-audio">Enable 3D Sound</button>
                 </div>
             </div>
         </section>
@@ -71,7 +75,7 @@
         <section class="lyric-section span">
             <h2 class="section-heading">🧠 AI Lyric Generator</h2>
             <p class="section-description">The future where AI composes with human emotion.</p>
-            <button id="generate-lyric" class="action-button">Generate a Lyric</button>
+            <button tabindex="0" id="generate-lyric" class="action-button">Generate a Lyric</button>
             <div id="lyric-display" class="lyric-box">Click to receive a futuristic lyric...</div>
         </section>
 
@@ -81,15 +85,15 @@
             <p class="section-description">Press the pads to create your own futuristic soundscape.</p>
             <div class="sound-pads">
                 <div class="pad-container">
-                    <button class="pad-btn" data-sound="synth">Synth Pad</button>
+                    <button tabindex="0" class="pad-btn" data-sound="synth">Synth Pad</button>
                     <div id="synth-wave" class="waveform"></div>
                 </div>
                 <div class="pad-container">
-                    <button class="pad-btn" data-sound="drum">Drum Beat</button>
+                    <button tabindex="0" class="pad-btn" data-sound="drum">Drum Beat</button>
                     <div id="drum-wave" class="waveform"></div>
                 </div>
                 <div class="pad-container">
-                    <button class="pad-btn" data-sound="glitch">Glitch FX</button>
+                    <button tabindex="0" class="pad-btn" data-sound="glitch">Glitch FX</button>
                     <div id="glitch-wave" class="waveform"></div>
                 </div>
             </div>
@@ -181,5 +185,7 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="scripts/music.js"></script>
+    <script src="scripts/light-mode.js"></script>
+
     </body>
     </html>

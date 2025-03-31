@@ -28,7 +28,7 @@ section {
     object-position: center;
 }
 .span {
-    grid-column: span 2;    
+    grid-column: span 3;    
 }
 
 

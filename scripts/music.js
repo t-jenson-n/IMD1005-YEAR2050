@@ -1,16 +1,16 @@
-// Light mode toggle functionality
-function ToggleLightMode() {
-    document.body.classList.toggle('lightMode');
+// // Light mode toggle functionality
+// function ToggleLightMode() {
+//     document.body.classList.toggle('lightMode');
     
-    // Save preference to localStorage
-    if (document.body.classList.contains('lightMode')) {
-        localStorage.setItem('lightMode', 'enabled');
-        document.getElementById('btn_lightmode').textContent = 'dark_mode';
-    } else {
-        localStorage.setItem('lightMode', 'disabled');
-        document.getElementById('btn_lightmode').textContent = 'light_mode';
-    }
-}
+//     // Save preference to localStorage
+//     if (document.body.classList.contains('lightMode')) {
+//         localStorage.setItem('lightMode', 'enabled');
+//         document.getElementById('btn_lightmode').textContent = 'dark_mode';
+//     } else {
+//         localStorage.setItem('lightMode', 'disabled');
+//         document.getElementById('btn_lightmode').textContent = 'light_mode';
+//     }
+// }
 
 // Music page functionality
 document.addEventListener('DOMContentLoaded', function() {

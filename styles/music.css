@@ -9,13 +9,22 @@
         --green: #95c73d;
         --bright-green: #a8e647; /* Brighter version for better contrast */
         --yellow: #f0cd29;
-        --bright-yellow: #ffd639; /* Brighter version for better contrast */
+       --bright-yellow: #ffd639;  /* Brighter version for better contrast */
         --black: #13120d;
         --dark-grey: #232220;
         --grey: #959594;
-        --light-grey: #ddded9;
-        --white: #f5f5f5;
+        /* --light-grey: #ddded9; */
+        /* --white: #f5f5f5; */
         --focus-ring: #4d90fe;
+
+        --green:  #a8e647;
+        --green2: #95c73d;
+        --yellow: rgb(221, 181, 19);
+        --yellow2: rgb(210, 136, 9);
+        --black: rgb(19, 18, 13);
+        --white: rgb(221, 222, 217);
+        --dgrey: rgb(28, 27, 25);
+        --grey: rgb(149, 149, 148);
     }
     
     body {
@@ -66,45 +75,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 25px 60px;
         position: relative;
-        grid-area: header;
     }
+
     
-    .header-left {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-    
-    .header-right {
-        display: flex;
-        align-items: center;
-    }
-    
-    .title {
-        color: var(--bright-green);
-        font-size: 70px;
-        font-family: 'Orbitron', sans-serif;
-        font-weight: 900;
-        text-decoration: none;
-        text-shadow: 0 0 10px rgba(134, 173, 33, 0.5);
-        transition: all 0.3s ease;
-    }
-    
-    .title:hover, .title:focus {
-        text-shadow: 0 0 15px rgba(134, 173, 33, 0.8);
-        transform: scale(1.02);
-    }
-    
-    .lightMode .title {
-        color: var(--bright-yellow);
-        text-shadow: 0 0 10px rgba(221, 181, 19, 0.5);
-    }
-    
-    .lightMode .title:hover, .lightMode .title:focus {
-        text-shadow: 0 0 15px rgba(221, 181, 19, 0.8);
-    }
+
     
     button {
         cursor: pointer;
@@ -136,14 +111,14 @@
     }
     
     .lightMode .light-toggle {
-        background-color: var(--bright-yellow);
-        border-color: var(--bright-yellow);
+        background-color: var(--white);
+        border-color: var(--black);
         color: var(--black);
     }
     
     .lightMode .light-toggle:hover {
-        background-color: transparent;
-        color: var(--bright-yellow);
+        background-color: var(--yellow);
+        color: var(--black);
     }
     
     .menu-toggle {
@@ -180,7 +155,7 @@
     .desktop-nav {
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 8px;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -189,11 +164,11 @@
     .desktop-nav a {
         color: var(--bright-green);
         text-decoration: none;
-        padding: 10px 20px;
+        padding: 10px 10px;
         border: 2px solid var(--bright-green);
         border-radius: 50px;
         transition: all 0.3s ease;
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .desktop-nav a:hover, .desktop-nav a:focus {
@@ -403,7 +378,7 @@
     }
     
     .lightMode .glitch-title {
-        color: var(--bright-yellow);
+        color: var(--black);
         text-shadow: 0 0 15px rgba(240, 205, 41, 0.4);
     }
     
@@ -513,7 +488,7 @@
     }
     
     .lightMode .headphone-note {
-        color: var(--bright-yellow);
+        color: var(--black);
     }
     
     .spatial-container {
@@ -564,7 +539,7 @@
     }
     
     .lightMode .spatial-text {
-        color: var(--bright-yellow);
+        color: var(--black);
     }
     
     .toggle-audio {
@@ -586,7 +561,7 @@
     }
     
     .lightMode .toggle-audio {
-        color: var(--bright-yellow);
+        color: var(--black);
         border: 2px solid var(--bright-yellow);
     }
     
@@ -645,7 +620,7 @@
     }
     
     .lightMode .action-button {
-        color: var(--bright-yellow);
+        color: var(--black);
         border: 2px solid var(--bright-yellow);
         box-shadow: 0 0 10px rgba(240, 205, 41, 0.2);
     }
@@ -933,7 +908,7 @@
     }
     
     .lightMode .year {
-        color: var(--bright-yellow);
+        color: var(--black);
     }
     
     .event {
@@ -1082,51 +1057,39 @@
         100% { transform: translate(0); }
     }
     
-    /* Footer */
-    footer {
-        grid-area: footer;
-        text-align: center;
-        padding: 30px 0;
-        margin-top: auto;
-        background-color: rgba(19, 18, 13, 0.7);
-        border-top: 1px solid rgba(149, 199, 61, 0.2);
+
+
+    /* MEDIA QUERIES */
+@media screen and (max-width: 880px) {
+    header {
+        /* display: flex; */
+        flex-wrap: wrap;
+        padding-bottom: 2px;
     }
-    
-    .lightMode footer {
-        background-color: rgba(245, 245, 245, 0.7);
-        border-top: 1px solid rgba(240, 205, 41, 0.2);
+    .layout {
+        grid-template-rows: auto auto 75px;
     }
-    
-    footer button {
-        background: transparent;
-        color: var(--bright-green);
-        border: 2px solid var(--bright-green);
-        padding: 10px 25px;
-        border-radius: 30px;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        font-family: 'Orbitron', sans-serif;
-        font-weight: 500;
+    button{
+        margin: 2px;
     }
-    
-    .lightMode footer button {
-        color: var(--black);
-        border: 2px solid var(--black);
+    .footer {
+        background: none;
     }
-    
-    footer button:hover, footer button:focus {
-        background: var(--bright-green);
-        color: var(--black);
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(149, 199, 61, 0.3);
+}
+
+/* 
+@media screen and (max-width: 700px) {
+    header {
+        padding: none;
+        margin: none;;
     }
-    
-    .lightMode footer button:hover, .lightMode footer button:focus {
-        background: var(--black);
-        color: var(--white);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    .nav {
+        padding: none;
     }
-    
+}   */
+
+
+
     /* Responsive Media Queries */
     @media screen and (max-width: 1200px) {
         header {
@@ -1134,7 +1097,7 @@
         }
         
         .title {
-            font-size: 60px;
+            font-size: 55px;
         }
         
         .glitch-title {
