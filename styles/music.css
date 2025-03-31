@@ -988,8 +988,11 @@
         height: 100%;
         background: var(--bright-green);
         border-radius: 20px;
-        transition: width 1s ease;
+
         box-shadow: 0 0 10px rgba(149, 199, 61, 0.4);
+        will-change: width; 
+        transition: none !important;
+        animation: none !important;
     }
     
     .lightMode .result-bar {
@@ -1185,9 +1188,11 @@
         
         .poll-btn {
             width: 80%;
+            padding: 8px 15px;
+            font-size: 0.9rem; 
+            min-width: 160px; 
         }
     }
-    
     @media screen and (max-width: 480px) {
         .title {
             font-size: 36px;
@@ -1235,5 +1240,19 @@
         .spatial-text {
             font-size: 1rem;
             bottom: 50px;
+        }
+        .poll-results.loading {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .result-bar {
+            width: 0; 
+            animation: animateBar 0.8s ease-out forwards; /* Animation for initial bars */
+        }
+
+        @keyframes animateBar {
+            from { width: 0; }
+            to { width: var(--target-width); }
         }
     }
