@@ -71,12 +71,9 @@ main {
 
 /* MEDIA QUERIES */
 @media screen and (width < 860px) {
-    .gallery {
-        grid-template-columns: 1fr 1fr;
+    header {
+        height: auto;
     }
-}
-
-@media screen and (max-width: 860px) {
     main {
         grid-template-columns: 1fr;
         padding-left: 0;
@@ -89,6 +86,13 @@ main {
     .card h2 {
         text-align: center;
     }
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 860px) {
+ 
 }
 
 @media screen and (width < 600px) {
