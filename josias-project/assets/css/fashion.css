@@ -1,0 +1,1070 @@
+/* Fashion Page Specific Styles */
+
+/* CSS Variables - Additional for Fashion */
+:root {
+    --fashion-primary: #00ffbb;
+    --fashion-secondary: #ff00aa;
+    --fashion-glow: 0 0 10px var(--fashion-primary), 0 0 20px var(--fashion-primary);
+    --fashion-secondary-glow: 0 0 10px var(--fashion-secondary), 0 0 20px var(--fashion-secondary);
+    --grid-color: rgba(0, 255, 187, 0.1);
+    --grid-size: 30px;
+    --transition-slow: 0.6s ease;
+    --feature-bg-1: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 30, 25, 0.9));
+    --feature-bg-2: linear-gradient(to bottom, rgba(0, 30, 25, 0.9), rgba(0, 0, 30, 0.9));
+    --feature-bg-3: linear-gradient(to bottom, rgba(0, 0, 30, 0.9), rgba(30, 0, 30, 0.9));
+    --quote-bg: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 20, 0.9));
+    --hero-bg: linear-gradient(135deg, rgba(0, 0, 30, 0.8), rgba(30, 0, 30, 0.8));
+    --try-on-bg: linear-gradient(to bottom, rgba(30, 0, 30, 0.9), rgba(0, 0, 0, 0.9));
+    --dropdown-bg: rgba(0, 0, 0, 0.3);
+    --card-border: 1px solid var(--fashion-primary);
+    --visual-bg-1: rgba(0, 0, 0, 0.3);
+    --visual-bg-2: rgba(0, 20, 20, 0.5);
+    --visual-bg-3: rgba(30, 0, 30, 0.5);
+  }
+  
+  [data-theme="light"] {
+    --fashion-primary: #00bb88;
+    --fashion-secondary: #cc0077;
+    --fashion-glow: 0 0 10px rgba(0, 187, 136, 0.5);
+    --fashion-secondary-glow: 0 0 10px rgba(204, 0, 119, 0.3);
+    --grid-color: rgba(0, 187, 136, 0.05);
+    --feature-bg-1: linear-gradient(to bottom, rgba(240, 248, 255, 0.95), rgba(230, 255, 250, 0.95));
+    --feature-bg-2: linear-gradient(to bottom, rgba(230, 255, 250, 0.95), rgba(240, 248, 255, 0.95));
+    --feature-bg-3: linear-gradient(to bottom, rgba(240, 248, 255, 0.95), rgba(250, 240, 255, 0.95));
+    --quote-bg: linear-gradient(to bottom, rgba(250, 250, 255, 0.95), rgba(240, 248, 255, 0.95));
+    --hero-bg: linear-gradient(135deg, rgba(240, 248, 255, 0.9), rgba(250, 240, 255, 0.9));
+    --try-on-bg: linear-gradient(to bottom, rgba(250, 240, 255, 0.95), rgba(240, 248, 255, 0.95));
+    --dropdown-bg: rgba(255, 255, 255, 0.3);
+    --card-border: 1px solid var(--fashion-primary);
+    --visual-bg-1: rgba(255, 255, 255, 0.3);
+    --visual-bg-2: rgba(230, 255, 250, 0.5);
+    --visual-bg-3: rgba(250, 240, 255, 0.5);
+  }
+  
+  /* General Layout */
+  section {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+    transition: background 0.3s ease;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--fashion-primary);
+    text-shadow: 0 0 10px var(--fashion-primary);
+    position: relative;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: var(--hero-bg);
+    overflow: hidden;
+    transition: background 0.3s ease;
+  }
+  
+  .hero-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20px;
+  }
+  
+  .hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--fashion-secondary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: color 0.3s ease;
+  }
+  
+  .glitch-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: var(--fashion-primary);
+    text-shadow: var(--fashion-glow);
+    position: relative;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  .glitch-title::before,
+  .glitch-title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: text-shadow 0.3s ease;
+  }
+  
+  .glitch-title::before {
+    animation: glitch-anim-1 4s infinite linear alternate-reverse;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    text-shadow: 2px 0 var(--fashion-secondary);
+  }
+  
+  .glitch-title::after {
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+    text-shadow: -2px 0 var(--fashion-primary);
+  }
+  
+  .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    opacity: 0.9;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Grid Overlay */
+  .grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+    opacity: 0.5;
+    z-index: 1;
+    transition: background-image 0.3s ease;
+  }
+  
+  /* Rotating Shirt Animation */
+  .rotating-shirt {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    perspective: 1000px;
+  }
+  
+  .shirt-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate-shirt 15s infinite linear;
+  }
+  
+  .shirt-placeholder {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+  
+  .shirt-front, .shirt-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    border: 2px solid var(--fashion-primary);
+    box-shadow: var(--fashion-glow);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  }
+  
+  .shirt-front {
+    background: linear-gradient(45deg, rgba(0, 255, 187, 0.2), rgba(0, 100, 100, 0.1));
+    transform: rotateY(0deg);
+  }
+  
+  [data-theme="light"] .shirt-front {
+    background: linear-gradient(45deg, rgba(0, 187, 136, 0.2), rgba(0, 100, 100, 0.05));
+  }
+  
+  .shirt-back {
+    background: linear-gradient(45deg, rgba(0, 100, 100, 0.1), rgba(0, 255, 187, 0.2));
+    transform: rotateY(180deg);
+  }
+  
+  [data-theme="light"] .shirt-back {
+    background: linear-gradient(45deg, rgba(0, 100, 100, 0.05), rgba(0, 187, 136, 0.2));
+  }
+  
+  .glow-effects {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .glow-effects::before,
+  .glow-effects::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--fashion-primary);
+    filter: blur(10px);
+    opacity: 0.7;
+    animation: float-lights 5s infinite alternate;
+    transition: background 0.3s ease;
+  }
+  
+  .glow-effects::before {
+    top: 20%;
+    left: 30%;
+    animation-delay: 0s;
+  }
+  
+  .glow-effects::after {
+    bottom: 30%;
+    right: 20%;
+    animation-delay: 2s;
+  }
+  
+  @keyframes rotate-shirt {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  @keyframes float-lights {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(20px) scale(1.5);
+      opacity: 0.3;
+    }
+  }
+  
+  /* Feature Sections */
+  .feature-section {
+    padding: 100px 20px;
+    position: relative;
+    transition: background 0.3s ease;
+  }
+  
+  #smart-fabrics {
+    background: var(--feature-bg-1);
+  }
+  
+  #sustainability {
+    background: var(--feature-bg-2);
+  }
+  
+  #digital-fashion {
+    background: var(--feature-bg-3);
+  }
+  
+  .section-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  
+  .section-content.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .feature-visual {
+    flex: 1;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .feature-dropdowns {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Visual Placeholders */
+  .visual-placeholder {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  [data-theme="light"] .visual-placeholder {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Smart Jacket Visualization */
+  .smart-jacket {
+    background: var(--visual-bg-1);
+    border: var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .smart-jacket-layers {
+    position: relative;
+    width: 70%;
+    height: 90%;
+  }
+  
+  .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border-radius: 5px;
+    transition: border 0.3s ease, background 0.3s ease;
+  }
+  
+  .layer-1 {
+    background: linear-gradient(45deg, rgba(0, 255, 187, 0.2), transparent);
+    border: 1px solid var(--fashion-primary);
+    animation: pulse-layer 4s infinite alternate;
+    z-index: 3;
+  }
+  
+  [data-theme="light"] .layer-1 {
+    background: linear-gradient(45deg, rgba(0, 187, 136, 0.2), transparent);
+  }
+  
+  .layer-2 {
+    background: linear-gradient(-45deg, rgba(255, 0, 170, 0.1), transparent);
+    border: 1px solid var(--fashion-secondary);
+    transform: scale(0.95);
+    animation: pulse-layer 4s infinite alternate-reverse;
+    z-index: 2;
+  }
+  
+  [data-theme="light"] .layer-2 {
+    background: linear-gradient(-45deg, rgba(204, 0, 119, 0.1), transparent);
+  }
+  
+  .layer-3 {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: scale(0.9);
+    animation: pulse-layer 4s infinite alternate;
+    z-index: 1;
+  }
+  
+  [data-theme="light"] .layer-3 {
+    background: rgba(240, 240, 240, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  @keyframes pulse-layer {
+    0% {
+      opacity: 0.5;
+      transform: scale(0.95);
+      box-shadow: 0 0 10px var(--fashion-primary);
+    }
+    100% {
+      opacity: 0.8;
+      transform: scale(1);
+      box-shadow: 0 0 20px var(--fashion-primary);
+    }
+  }
+  
+  /* Eco Material Visualization */
+  .eco-material {
+    background: var(--visual-bg-2);
+    border: var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .material-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(0, 255, 187, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0, 255, 187, 0.15) 0%, transparent 50%);
+    filter: blur(2px);
+    opacity: 0.8;
+    transition: background-image 0.3s ease;
+  }
+  
+  [data-theme="light"] .material-texture {
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(0, 187, 136, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0, 187, 136, 0.15) 0%, transparent 50%);
+  }
+  
+  .growth-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .growth-animation span {
+    width: 40px;
+    height: 40px;
+    background: var(--fashion-primary);
+    opacity: 0.3;
+    border-radius: 50%;
+    filter: blur(5px);
+    animation: grow-fade 5s infinite;
+    transition: background 0.3s ease;
+  }
+  
+  @keyframes grow-fade {
+    0% {
+      transform: scale(0.5);
+      opacity: 0.1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.3;
+    }
+    100% {
+      transform: scale(0.5);
+      opacity: 0.1;
+    }
+  }
+  
+  /* AR Closet Visualization */
+  .ar-closet {
+    background: var(--visual-bg-3);
+    border: 1px solid var(--fashion-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .model-silhouette {
+    width: 120px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 60px 60px 0 0;
+    position: relative;
+    z-index: 1;
+    transition: background 0.3s ease;
+  }
+  
+  [data-theme="light"] .model-silhouette {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .model-silhouette::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 35px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transition: background 0.3s ease;
+  }
+  
+  [data-theme="light"] .model-silhouette::before {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .floating-garments {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .garment {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    border: 1px solid var(--fashion-secondary);
+    background: rgba(255, 0, 170, 0.1);
+    border-radius: 5px;
+    animation: float-garment 8s infinite ease-in-out;
+    transition: border 0.3s ease, background 0.3s ease;
+  }
+  
+  [data-theme="light"] .garment {
+    background: rgba(204, 0, 119, 0.1);
+  }
+  
+  .g1 {
+    top: 30%;
+    left: 20%;
+    animation-delay: 0s;
+  }
+  
+  .g2 {
+    top: 50%;
+    right: 25%;
+    animation-delay: 2s;
+  }
+  
+  .g3 {
+    bottom: 30%;
+    left: 60%;
+    animation-delay: 4s;
+  }
+  
+  .ar-interface {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .interface-element {
+    position: absolute;
+    border: 1px solid var(--fashion-primary);
+    background: rgba(0, 255, 187, 0.05);
+    border-radius: 5px;
+    transition: border 0.3s ease, background 0.3s ease;
+  }
+  
+  [data-theme="light"] .interface-element {
+    background: rgba(0, 187, 136, 0.05);
+  }
+  
+  .e1 {
+    width: 70px;
+    height: 40px;
+    top: 20%;
+    right: 15%;
+    animation: pulse-opacity 4s infinite alternate;
+  }
+  
+  .e2 {
+    width: 100px;
+    height: 30px;
+    bottom: 25%;
+    left: 10%;
+    animation: pulse-opacity 4s infinite alternate-reverse;
+  }
+  
+  .e3 {
+    width: 50px;
+    height: 100px;
+    top: 40%;
+    left: 15%;
+    animation: pulse-opacity 4s infinite alternate;
+    animation-delay: 1s;
+  }
+  
+  @keyframes float-garment {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(20px) rotate(5deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+  
+  @keyframes pulse-opacity {
+    0% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0.8;
+    }
+  }
+  
+  /* Dropdown Styles */
+  .dropdown {
+    background: var(--dropdown-bg);
+    border: var(--card-border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .dropdown:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 187, 0.3);
+  }
+  
+  [data-theme="light"] .dropdown:hover {
+    box-shadow: 0 0 15px rgba(0, 187, 136, 0.3);
+  }
+  
+  .dropdown-toggle {
+    width: 100%;
+    padding: 15px 20px;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  .dropdown-toggle:hover {
+    color: var(--fashion-primary);
+  }
+  
+  .toggle-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown.active .toggle-icon {
+    transform: rotate(45deg);
+  }
+  
+  .dropdown-content {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    padding: 0 20px;
+  }
+  
+  .dropdown.active .dropdown-content {
+    height: auto;
+    opacity: 1;
+    padding: 0 20px 20px;
+  }
+  
+  /* Try On Section */
+  .try-on-section {
+    background: var(--try-on-bg);
+    padding: 100px 20px;
+    transition: background 0.3s ease;
+  }
+  
+  .try-on-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  
+  .mannequin-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .mannequin {
+    width: 300px;
+    height: 500px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50px 50px 0 0;
+    border: 1px solid var(--fashion-primary);
+    overflow: hidden;
+    transition: background 0.3s ease, border 0.3s ease;
+  }
+  
+  [data-theme="light"] .mannequin {
+    background: rgba(240, 240, 240, 0.2);
+  }
+  
+  .outfit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .outfit.active {
+    opacity: 1;
+  }
+  
+  .outfit-1 {
+    background: linear-gradient(180deg, var(--fashion-primary) 0%, transparent 100%);
+    background-size: 400% 400%;
+    animation: shifting-gradient 10s ease infinite;
+  }
+  
+  .outfit-2 {
+    background: linear-gradient(135deg, var(--fashion-secondary) 0%, transparent 100%);
+    background-size: 400% 400%;
+    animation: shifting-gradient 12s ease infinite;
+  }
+  
+  .outfit-3 {
+    background: linear-gradient(90deg, var(--fashion-primary), var(--fashion-secondary));
+    background-size: 400% 400%;
+    animation: shifting-gradient 8s ease infinite;
+  }
+  
+  @keyframes shifting-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .outfit-controls {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .outfit-info {
+    margin-bottom: 30px;
+  }
+  
+  .outfit-info h3 {
+    font-size: 1.8rem;
+    color: var(--fashion-primary);
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  .outfit-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+  }
+  
+  .outfit-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .outfit-btn {
+    padding: 12px 20px;
+    background: transparent;
+    border: 1px solid var(--fashion-primary);
+    color: var(--text);
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .outfit-btn:hover {
+    background: rgba(0, 255, 187, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 187, 0.3);
+  }
+  
+  [data-theme="light"] .outfit-btn:hover {
+    background: rgba(0, 187, 136, 0.1);
+    box-shadow: 0 0 10px rgba(0, 187, 136, 0.3);
+  }
+  
+  .outfit-btn.active {
+    background: var(--fashion-primary);
+    color: #000;
+    box-shadow: 0 0 15px var(--fashion-primary);
+  }
+  
+  [data-theme="light"] .outfit-btn.active {
+    color: #fff;
+  }
+  
+  /* Quote Section */
+  .quote-section {
+    padding: 150px 20px;
+    background: var(--quote-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+  }
+  
+  .quote-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 255, 187, 0.1) 0%, transparent 70%);
+    z-index: 1;
+    transition: background 0.3s ease;
+  }
+  
+  [data-theme="light"] .quote-section::before {
+    background: radial-gradient(circle at center, rgba(0, 187, 136, 0.1) 0%, transparent 70%);
+  }
+  
+  .quote-container {
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  blockquote {
+    font-size: 2.5rem;
+    line-height: 1.4;
+    color: var(--text);
+    margin: 0;
+    font-style: italic;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  blockquote::before,
+  blockquote::after {
+    content: '"';
+    position: absolute;
+    font-size: 4rem;
+    color: var(--fashion-primary);
+    opacity: 0.5;
+    transition: color 0.3s ease;
+  }
+  
+  blockquote::before {
+    top: -20px;
+    left: -20px;
+  }
+  
+  blockquote::after {
+    bottom: -50px;
+    right: -20px;
+  }
+  
+  /* Back to Home Button */
+  .back-to-home {
+    text-align: center;
+    padding: 60px 0;
+    background-color: var(--bg);
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: transparent;
+    color: var(--fashion-primary);
+    border: 1px solid var(--fashion-primary);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0 0 5px rgba(0, 255, 187, 0.3);
+    text-decoration: none;
+  }
+  
+  [data-theme="light"] .back-btn {
+    box-shadow: 0 0 5px rgba(0, 187, 136, 0.3);
+  }
+  
+  .back-btn:hover {
+    background: var(--fashion-primary);
+    color: #000;
+    box-shadow: 0 0 10px var(--fashion-glow);
+    transform: translateX(-5px);
+  }
+  
+  [data-theme="light"] .back-btn:hover {
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 187, 136, 0.5);
+  }
+  
+  /* Animations */
+  @keyframes glitch-anim-1 {
+    0%, 100% { 
+      transform: translate(0);
+    }
+    20% { 
+      transform: translate(-5px, 5px);
+    }
+    40% { 
+      transform: translate(-5px, -5px);
+    }
+    60% { 
+      transform: translate(5px, 5px);
+    }
+    80% { 
+      transform: translate(5px, -5px);
+    }
+  }
+  
+  @keyframes glitch-anim-2 {
+    0%, 100% { 
+      transform: translate(0);
+    }
+    20% { 
+      transform: translate(-3px, 3px);
+    }
+    40% { 
+      transform: translate(-3px, -3px);
+    }
+    60% { 
+      transform: translate(3px, 3px);
+    }
+    80% { 
+      transform: translate(3px, -3px);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .hero-content,
+    .section-content,
+    .try-on-container {
+      padding: 0 40px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .glitch-title {
+      font-size: 3rem;
+    }
+    
+    .section-title {
+      font-size: 2.2rem;
+    }
+    
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 50px;
+    }
+    
+    .hero-text {
+      padding-right: 0;
+      align-items: center;
+    }
+    
+    .section-content,
+    .section-content.reverse,
+    .try-on-container {
+      flex-direction: column;
+      gap: 50px;
+    }
+    
+    .feature-visual {
+      order: 1;
+    }
+    
+    .feature-dropdowns {
+      order: 2;
+    }
+    
+    blockquote {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    section {
+      padding: 70px 0;
+    }
+    
+    .glitch-title {
+      font-size: 2.5rem;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+    
+    .rotating-shirt {
+      width: 240px;
+      height: 320px;
+    }
+    
+    .mannequin {
+      width: 220px;
+      height: 400px;
+    }
+    
+    .outfit-buttons {
+      flex-direction: column;
+    }
+    
+    blockquote {
+      font-size: 1.5rem;
+    }
+    
+    blockquote::before,
+    blockquote::after {
+      font-size: 3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .glitch-title {
+      font-size: 2rem;
+    }
+    
+    .intro-text,
+    .dropdown-toggle,
+    .dropdown-content p {
+      font-size: 0.9rem;
+    }
+    
+    .rotating-shirt {
+      width: 200px;
+      height: 280px;
+    }
+    
+    .mannequin {
+      width: 180px;
+      height: 350px;
+    }
+    
+    .outfit-info h3 {
+      font-size: 1.5rem;
+    }
+    
+    blockquote {
+      font-size: 1.3rem;
+    }
+  }

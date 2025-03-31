@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>The World in 2050</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- Top Banner -->
+  <header class="top-banner">
+    <span>💡 Designed by Josias · Jonas · Tyler</span>
+    <button id="toggle-theme">🌓</button>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav-container">
+    <div class="navbar">
+      <button class="hamburger">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="fashion.html">Fashion</a></li>
+        <li><a href="art.html">Art</a></li>
+        <li><a href="credits.html">Credits</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="scanline"></div>
+      <h1 class="glitch">The World in 2050</h1>
+      <button id="predict-btn">🔮 Predict the Future</button>
+      <p id="prediction-text">Click the button to see your future...</p>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+      <h2>Countdown to 2050</h2>
+      <div id="countdown-display">Loading...</div>
+    </section>
+
+    <!-- Year Scroll Section -->
+    <section class="year-scroll-section">
+      <div id="scrolling-year">2049</div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="cards-section">
+      <div class="card">
+        <h3><a href="music.html" class="card-link">Future of Music</a></h3>
+        <p>Explore AI-driven soundscapes and immersive concerts.</p>
+        <div class="author">
+          <img src="assets/img/josias.png" alt="Josias" />
+          <span>Josias</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3><a href="fashion.html" class="card-link">Future of Fashion</a></h3>
+        <p>Wearable tech and sustainable digital design.</p>
+        <div class="author">
+          <img src="assets/img/jonas.png" alt="Jonas" />
+          <span>Jonas</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3><a href="art.html" class="card-link">Future of Art</a></h3>
+        <p>Interactive installation and generative visuals.</p>
+        <div class="author">
+          <img src="assets/img/tyler.png" alt="Tyler" />
+          <span>Tyler</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Top -->
+    <div class="back-to-top-wrapper">
+      <button id="back-to-top">⬆ Back to Top</button>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

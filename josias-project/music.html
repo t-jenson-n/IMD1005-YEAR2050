@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>Future of Music - The World in 2050</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/music.css" />
+</head>
+<body>
+  <!-- Top Banner -->
+  <header class="top-banner">
+    <span>🎵 Future of Music · The World in 2050</span>
+    <button id="toggle-theme">🌓</button>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav-container">
+    <div class="navbar">
+      <button class="hamburger">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html" class="active">Music</a></li>
+        <li><a href="fashion.html">Fashion</a></li>
+        <li><a href="art.html">Art</a></li>
+        <li><a href="credits.html">Credits</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <h1 class="glitch-title" data-text="THE FUTURE OF MUSIC">THE FUTURE OF MUSIC</h1>
+      <p id="typing-text" class="typing-text"></p>
+    </section>
+
+    <!-- 3D Concert Section -->
+    <section class="concert-section">
+      <h2 class="text-center">🌐 Step Into the Sound</h2>
+      <p class="text-center section-description">Welcome to the concert of the future — where sound doesn't just play, it surrounds you. This immersive 8D audio experience offers a glimpse into how tomorrow's live performances will blur the line between reality and digital space.</p>
+      <p class="headphone-note">🎧 <em>Use headphones and move your cursor to feel the spatial movement of sound — just like you're inside the music.</em></p>
+      <div class="section-content">
+        <div id="spatial-sound" class="spatial-container">
+          <div class="spatial-indicator">🎵</div>
+          <div class="spatial-text">Move cursor to experience 3D audio</div>
+          <button id="toggle-spatial" class="toggle-audio">Enable 3D Sound</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Lyric Generator Section -->
+    <section class="lyric-section">
+      <h2 class="text-center">🧠 AI Lyric Generator</h2>
+      <p class="text-center section-description">The future where AI composes with human emotion.</p>
+      <button id="generate-lyric" class="action-button">Generate a Lyric</button>
+      <div id="lyric-display" class="lyric-box">Click to receive a futuristic lyric...</div>
+    </section>
+
+    <!-- Sonic Lab Section -->
+    <section class="lab-section">
+      <h2 class="text-center">🎛️ Sonic Lab: Compose the Future</h2>
+      <p class="text-center section-description">Press the pads to create your own futuristic soundscape.</p>
+      <div class="sound-pads">
+        <div class="pad-container">
+          <button class="pad-btn" data-sound="synth">Synth Pad</button>
+          <div id="synth-wave" class="waveform"></div>
+        </div>
+        <div class="pad-container">
+          <button class="pad-btn" data-sound="drum">Drum Beat</button>
+          <div id="drum-wave" class="waveform"></div>
+        </div>
+        <div class="pad-container">
+          <button class="pad-btn" data-sound="glitch">Glitch FX</button>
+          <div id="glitch-wave" class="waveform"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+      <h2 class="text-center">📈 The Road to 2050</h2>
+      <div class="timeline">
+        <div class="year-item" data-year="2025">
+          <div class="year">2025</div>
+          <div class="event">Personalized AI playlists become the norm</div>
+        </div>
+        <div class="year-item" data-year="2030">
+          <div class="year">2030</div>
+          <div class="event">Virtual Reality concerts revolutionize live music</div>
+        </div>
+        <div class="year-item" data-year="2035">
+          <div class="year">2035</div>
+          <div class="event">Brainwave-based music creation emerges</div>
+        </div>
+        <div class="year-item" data-year="2045">
+          <div class="year">2045</div>
+          <div class="event">Emotion-synced songs adapt to your feelings</div>
+        </div>
+        <div class="year-item" data-year="2050">
+          <div class="year">2050</div>
+          <div class="event">Fully autonomous AI artists top the charts</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Poll Section -->
+    <section class="poll-section">
+      <h2 class="text-center">📊 Future Poll</h2>
+      <p class="text-center section-description">What excites you most about music in 2050?</p>
+      <div class="poll-options">
+        <button class="poll-btn" data-option="ai">AI Music Composition</button>
+        <button class="poll-btn" data-option="vr">VR Concert Experience</button>
+        <button class="poll-btn" data-option="brainwave">Brainwave Composition</button>
+        <button class="poll-btn" data-option="robots">Robot Performers</button>
+      </div>
+      <div class="poll-results">
+        <div class="result-container">
+          <div class="result-label">AI Music</div>
+          <div class="result-bar-container">
+            <div id="ai-bar" class="result-bar" style="width: 35%"></div>
+            <span id="ai-percentage" class="result-percentage">35%</span>
+          </div>
+        </div>
+        <div class="result-container">
+          <div class="result-label">VR Concerts</div>
+          <div class="result-bar-container">
+            <div id="vr-bar" class="result-bar" style="width: 30%"></div>
+            <span id="vr-percentage" class="result-percentage">30%</span>
+          </div>
+        </div>
+        <div class="result-container">
+          <div class="result-label">Brainwave Music</div>
+          <div class="result-bar-container">
+            <div id="brainwave-bar" class="result-bar" style="width: 25%"></div>
+            <span id="brainwave-percentage" class="result-percentage">25%</span>
+          </div>
+        </div>
+        <div class="result-container">
+          <div class="result-label">Robot Performers</div>
+          <div class="result-bar-container">
+            <div id="robots-bar" class="result-bar" style="width: 10%"></div>
+            <span id="robots-percentage" class="result-percentage">10%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Home Button -->
+    <div class="back-to-home">
+      <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+  </main>
+
+  <!-- Audio Elements -->
+  <audio id="typing-sound" src="assets/sfx/typing.wav" preload="auto"></audio>
+  <audio id="hover-sound" src="assets/sfx/hover.wav" preload="auto"></audio>
+  <audio id="synth-sound" src="assets/sfx/synth.wav" preload="auto"></audio>
+  <audio id="drum-sound" src="assets/sfx/drum.wav" preload="auto"></audio>
+  <audio id="glitch-sound" src="assets/sfx/glitch.wav" preload="auto"></audio>
+  <audio id="ambient-sound" src="assets/sfx/ambient-3d.m4a" preload="auto" loop></audio>
+  <audio id="lyric-sound" src="assets/sfx/lyric-glitch.wav" preload="auto"></audio>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="assets/js/music.js"></script>
+</body>
+</html>
