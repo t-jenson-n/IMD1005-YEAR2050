@@ -3,48 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music</title>
+    <title>Music - 2050</title>
     <link rel="icon" href="images/favicon.png">
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/general.css">
-    <link rel="stylesheet" href="styles/music.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
-
+    <link href="styles/music.css" rel="stylesheet"/>
 </head>
 <body class="grid layout">
-    
     <header>
         <a href="#main" class="skip">Skip to main content</a>
 
-        <button tabindex="0" class="icon" onclick="ToggleLightMode()">
-            <span id="btn_lightmode" class="material-symbols-outlined"> light_mode
-            </span>
-        </button>
-        <nav>  
-            <a  href="fashion.html"><button tabindex="0">fashion</button></a> 
-            <a href="installation.html"> <button tabindex="0">installation art</button></a>
-            <a href="music.html"> <button tabindex="0">music</button></a>
-        </nav>
-        <a tabindex="0" class="title" href="index.html">2050</a>
-    </header>
-    
-    <main id="main">
-
-
-
+        <div class="header-left">
+            <button tabindex="0" class="light-toggle" onclick="ToggleLightMode()">
+                <span id="btn_lightmode" class="material-symbols-outlined">light_mode</span>
+            </button>
+            <button tabindex="0" class="menu-toggle" id="menu-toggle">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
         
+        <nav class="desktop-nav">  
+            <a href="fashion.html">Fashion</a> 
+            <a href="installation.html">Installation Art</a>
+            <a href="music.html" class="active">Music</a>
+            <a href="credits.html">Meet the Team</a>
+        </nav>
+        
+        <div id="mobile-nav" class="mobile-nav">
+            <nav>  
+                <a href="fashion.html">Fashion</a> 
+                <a href="installation.html">Installation Art</a>
+                <a href="music.html" class="active">Music</a>
+                <a href="credits.html">Meet the Team</a>
+            </nav>
+            <button tabindex="0" class="menu-close" id="menu-close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        
+        <div class="header-right">
+            <a tabindex="0" class="title" href="index.html">2050</a>
+        </div>
+    </header>
+
+    <main id="main" class="music-main">
+        <!-- Hero Section -->
+        <section class="hero-section span">
+            <h1 class="glitch-title" data-text="THE FUTURE OF MUSIC">THE FUTURE OF MUSIC</h1>
+            <p id="typing-text" class="typing-text"></p>
+        </section>
+
+        <!-- 3D Concert Section -->
+        <section class="concert-section span">
+            <h2 class="section-heading">🌐 Step Into the Sound</h2>
+            <p class="section-description">Welcome to the concert of the future — where sound doesn't just play, it surrounds you. This immersive 8D audio experience offers a glimpse into how tomorrow's live performances will blur the line between reality and digital space.</p>
+            <p class="headphone-note">🎧 <em>Use headphones and move your cursor to feel the spatial movement of sound — just like you're inside the music.</em></p>
+            <div class="section-content">
+                <div id="spatial-sound" class="spatial-container">
+                    <div class="spatial-indicator">🎵</div>
+                    <div class="spatial-text">Move cursor to experience 3D audio</div>
+                    <button id="toggle-spatial" class="toggle-audio">Enable 3D Sound</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Lyric Generator Section -->
+        <section class="lyric-section span">
+            <h2 class="section-heading">🧠 AI Lyric Generator</h2>
+            <p class="section-description">The future where AI composes with human emotion.</p>
+            <button id="generate-lyric" class="action-button">Generate a Lyric</button>
+            <div id="lyric-display" class="lyric-box">Click to receive a futuristic lyric...</div>
+        </section>
+
+        <!-- Sonic Lab Section -->
+        <section class="lab-section span">
+            <h2 class="section-heading">🎛️ Sonic Lab: Compose the Future</h2>
+            <p class="section-description">Press the pads to create your own futuristic soundscape.</p>
+            <div class="sound-pads">
+                <div class="pad-container">
+                    <button class="pad-btn" data-sound="synth">Synth Pad</button>
+                    <div id="synth-wave" class="waveform"></div>
+                </div>
+                <div class="pad-container">
+                    <button class="pad-btn" data-sound="drum">Drum Beat</button>
+                    <div id="drum-wave" class="waveform"></div>
+                </div>
+                <div class="pad-container">
+                    <button class="pad-btn" data-sound="glitch">Glitch FX</button>
+                    <div id="glitch-wave" class="waveform"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section span">
+            <h2 class="section-heading">📈 The Road to 2050</h2>
+            <div class="timeline">
+                <div class="year-item" data-year="2025">
+                    <div class="year">2025</div>
+                    <div class="event">Personalized AI playlists become the norm</div>
+                </div>
+                <div class="year-item" data-year="2030">
+                    <div class="year">2030</div>
+                    <div class="event">Virtual Reality concerts revolutionize live music</div>
+                </div>
+                <div class="year-item" data-year="2035">
+                    <div class="year">2035</div>
+                    <div class="event">Brainwave-based music creation emerges</div>
+                </div>
+                <div class="year-item" data-year="2045">
+                    <div class="year">2045</div>
+                    <div class="event">Emotion-synced songs adapt to your feelings</div>
+                </div>
+                <div class="year-item" data-year="2050">
+                    <div class="year">2050</div>
+                    <div class="event">Fully autonomous AI artists top the charts</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poll Section -->
+        <section class="poll-section span">
+            <h2 class="section-heading">📊 Future Poll</h2>
+            <p class="section-description">What excites you most about music in 2050?</p>
+            <div class="poll-options">
+                <button class="poll-btn" data-option="ai">AI Music Composition</button>
+                <button class="poll-btn" data-option="vr">VR Concert Experience</button>
+                <button class="poll-btn" data-option="brainwave">Brainwave Composition</button>
+                <button class="poll-btn" data-option="robots">Robot Performers</button>
+            </div>
+            <div class="poll-results">
+                <div class="result-container">
+                    <div class="result-label">AI Music</div>
+                    <div class="result-bar-container">
+                        <div id="ai-bar" class="result-bar" style="width: 35%"></div>
+                        <span id="ai-percentage" class="result-percentage">35%</span>
+                    </div>
+                </div>
+                <div class="result-container">
+                    <div class="result-label">VR Concerts</div>
+                    <div class="result-bar-container">
+                        <div id="vr-bar" class="result-bar" style="width: 30%"></div>
+                        <span id="vr-percentage" class="result-percentage">30%</span>
+                    </div>
+                </div>
+                <div class="result-container">
+                    <div class="result-label">Brainwave Music</div>
+                    <div class="result-bar-container">
+                        <div id="brainwave-bar" class="result-bar" style="width: 25%"></div>
+                        <span id="brainwave-percentage" class="result-percentage">25%</span>
+                    </div>
+                </div>
+                <div class="result-container">
+                    <div class="result-label">Robot Performers</div>
+                    <div class="result-bar-container">
+                        <div id="robots-bar" class="result-bar" style="width: 10%"></div>
+                        <span id="robots-percentage" class="result-percentage">10%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <a href="fashion.html"><button tabindex="0">Take me to the next article!</button></a> 
-        <a href="credits.html"><button tabindex="0">Meet the Team</button></a>     
+        <a href="index.html"><button tabindex="0">Back to Home</button></a>     
     </footer>
 
-    <script src="scripts/dark-mode.js"></script>
+    <!-- Audio Elements -->
+    <audio id="typing-sound" src="audio/typing.wav" preload="auto"></audio>
+    <audio id="hover-sound" src="audio/hover.wav" preload="auto"></audio>
+    <audio id="synth-sound" src="audio/synth.wav" preload="auto"></audio>
+    <audio id="drum-sound" src="audio/drum.wav" preload="auto"></audio>
+    <audio id="glitch-sound" src="audio/glitch.wav" preload="auto"></audio>
+    <audio id="ambient-sound" src="audio/ambient-3d.m4a" preload="auto" loop></audio>
+    <audio id="lyric-sound" src="audio/lyric-glitch.wav" preload="auto"></audio>
 
-</body>
-</html>
-
-
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="scripts/music.js"></script>
+    </body>
+    </html>

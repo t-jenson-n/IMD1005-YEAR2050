@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Climate+Crisis&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Stalinist+One&display=swap&family=Orbitron:wght@400..900&display=swap');
 
 /* SKIP LINKS */
 .skip {
@@ -14,7 +14,7 @@
 /* CORE SECTIONS */
 body {
     --green: rgb(134, 173, 33);
-    /* --green2: rgb(94, 116, 16); not high enough contrast*/
+    --green2: rgb(94, 116, 16);
     --yellow: rgb(221, 181, 19);
     --yellow2: rgb(210, 136, 9);
     --black: rgb(19, 18, 13);
@@ -37,10 +37,11 @@ body.lightMode {
 }
 
 header {
-    margin-top: 20px;
+    padding:25px;
+    margin-top: 40px;
     margin-bottom: 40px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -71,7 +72,7 @@ footer {
 
 /* LAYOUTS */
 .grid.layout {
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 140px auto 75px;
     background-color: (193, 226, 59);
     display: grid;
 }
@@ -147,6 +148,7 @@ h3 {
     padding: 20px;
 }
 .lightMode .card {
+    background-color: rgba(47, 47, 47, 0.059);
     border-radius: 10px;
     padding: 20px;
 }
@@ -155,25 +157,25 @@ h3 {
     background-color: var(--dgrey);
     border-radius: 10px;
     padding: 20px;
- }
-
+}
 .lightMode .card.info {
+    border-color: var(--black);
     background-color: rgba(56, 56, 53, 0.066);
 }
 .card.info:hover {
+    border: 1px solid var(--green2);
     background: none;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 0 30px var(--green), 0 0 60px var(--green),
-    0 0 90px var(--green);
+    transition: color 0.25s, border-color 0.25s, background 0.25s;
 }
 .lightMode .card.info:hover {
-    box-shadow: 0 0 30px var(--yellow), 0 0 60px var(--yellow),
-    0 0 90px var(--yellow);}
+    border-color: var(--yellow);
+}
 
 /* LINKS */
 button {
-    color: var(--green);
+    color: var(--green2);
     background: none;
     border: 2px;
     border-style: solid; 
@@ -240,6 +242,9 @@ a {
         flex-wrap: wrap;
         padding-bottom: 2px;
     }
+    .layout {
+        grid-template-rows: auto auto 75px;
+    }
     button{
         margin: 2px;
     }
@@ -247,3 +252,14 @@ a {
         background: none;
     }
 }
+
+/* 
+@media screen and (max-width: 700px) {
+    header {
+        padding: none;
+        margin: none;;
+    }
+    .nav {
+        padding: none;
+    }
+}   */

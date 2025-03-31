@@ -3,81 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>2050</title>
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/index.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
-
 </head>
 <body class="grid layout">
     
     <header>
         <a href="#main" class="skip">Skip to main content</a>
 
-        <button tabindex="0" class="icon" onclick="ToggleLightMode()">
-            <span id="btn_lightmode" class="material-symbols-outlined"> light_mode
-            </span>
-        </button>
-        <nav>  
-            <a href="fashion.html"><button tabindex="0">fashion</button></a> 
-            <a href="installation.html"> <button tabindex="0">installation art</button></a>
-            <a href="music.html"> <button tabindex="0">music</button></a>
+        <div class="header-left">
+            <button tabindex="0" class="light-toggle" onclick="ToggleLightMode()">
+                <span id="btn_lightmode" class="material-symbols-outlined"> light_mode
+                </span>
+            </button>
+            <button tabindex="0" class="menu-toggle" id="menu-toggle">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+        
+        <nav class="desktop-nav">  
+            <a href="fashion.html">fashion</a> 
+            <a href="installation.html">installation art</a>
+            <a href="music.html">music</a>
+            <a href="credits.html">meet the team</a>
         </nav>
-        <a tabindex="0" class="title" href="index.html">2050</a>
+        
+        <div id="mobile-nav" class="mobile-nav">
+            <nav>  
+                <a href="fashion.html">fashion</a> 
+                <a href="installation.html">installation art</a>
+                <a href="music.html">music</a>
+                <a href="credits.html">meet the team</a>
+            </nav>
+            <button tabindex="0" class="menu-close" id="menu-close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        
+        <div class="header-right">
+            <a tabindex="0" class="title" href="index.html">2050</a>
+        </div>
     </header>
 
-
     <main id="main">    
-        <section class="span full">
-            <div class="center span card" >
-                <p class="timer" id="timer"></p>
-            </div>
-            
-            <div class="span center card title">
-                <h2>What Does the Future After the Year 2050 Look Like?</h2>
-            </div>
+        <!-- Countdown Section -->
+        <section class="countdown-container span">
+            <div class="mega-timer" id="timer"></div>
+            <h2 class="main-heading">What Does the Future After the Year 2050 Look Like?</h2>
+            <button tabindex="0" id="predict-button" class="predict-btn">🔮 Predict</button>
+            <p id="prediction-text">Click to see what awaits you in 2050...</p>
         </section>    
        
-        <div class = "span infos">
+        <!-- Cards Section -->
+        <div class="span infos">
+            <!-- Art Card -->
             <div class="hidden card info">
-                <img class ="center" src="https://placehold.co/900x400" alt="placeholder">
-                <h3>Music</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nihil libero quidem officiis, tenetur accusamus ex numquam placeat dolorum dolor non nesciunt exercitationem laborum? Sint voluptates ipsa voluptas repudiandae unde.
-                <br><br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nihil libero quidem officiis, tenetur accusamus ex numquam placeat dolorum dolor non nesciunt exercitationem laborum? Sint voluptates ipsa voluptas repudiandae unde.
-                <br><br>
-                <div class="center"><a href="music.html"> <button tabindex="0" class = "cardbutton">Learn More</button></a></div>
-                </p>
-            </div>
-    
-            <div class="hidden card info">
-                <img class ="center" src="https://placehold.co/900x400" alt="placeholder">
+                <img class="center" src="https://placehold.co/900x400" alt="Installation Art placeholder image">
                 <h3>Immersive Art</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab similique eos beatae ipsam possimus. Delectus voluptate dolorem incidunt officiis optio minima nostrum voluptatibus sed. Praesentium ea architecto distinctio corporis! Dolor.
+                <p>Installation art in 2050 has evolved into fully responsive environments where boundaries between audience and artwork dissolve completely. Interactive holograms, tactile light sculptures, and spaces adapt to emotional states.
                 <br><br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio beatae repudiandae et reprehenderit! Sunt delectus laudantium nesciunt ipsam quaerat facilis? Esse quis deserunt officiis delectus error assumenda cum aspernatur doloribus.
-                <br><br>
-                <div class="center"><a href="installation.html"> <button tabindex="0" class = "cardbutton">Learn More</button></a></div>
+                Quantum projection technology allows creators to manifest thought directly into visual matter, while collective consciousness networks enable audiences to contribute to evolving artworks in real-time.
                 </p>
+                <div class="card-footer">
+                    <div class="author">
+                        <img src="images/tyler.jpg" alt="Tyler">
+                        <span>Tyler</span>
+                    </div>
+                    <a href="installation.html"><button tabindex="0" class="learn-more">Learn More</button></a>
+                </div>
             </div>
     
+            <!-- Music Card -->
             <div class="hidden card info">
-                <img class ="center" src="https://placehold.co/900x400" alt="placeholder">
-                <h3>Future of Fashion</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nihil libero quidem officiis, tenetur accusamus ex numquam placeat dolorum dolor non nesciunt exercitationem laborum? Sint voluptates ipsa voluptas repudiandae unde.
+                <img class="center" src="https://placehold.co/900x400" alt="Music placeholder image">
+                <h3>Music</h3>
+                <p>In 2050, music has transcended traditional boundaries through AI-driven soundscapes and immersive concert experiences. Neural interfaces allow listeners to physically experience sound, while algorithm composers collaborate with human artists.
                 <br><br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nihil libero quidem officiis, tenetur accusamus ex numquam placeat dolorum dolor non nesciunt exercitationem laborum? Sint voluptates ipsa voluptas repudiandae unde.
-                <br><br>
-                <div class="center"><a href="fashion.html"> <button tabindex="0" class = "cardbutton">Learn More</button></a></div>
+                From thought-reactive melodies to architectural harmonies that respond to crowd emotions, music has become a fully sensory and interactive medium that connects humanity beyond language.
                 </p>
+                <div class="card-footer">
+                    <div class="author">
+                        <img src="https://placehold.co/50x50" alt="Josias">
+                        <span>Josias</span>
+                    </div>
+                    <a href="music.html"><button tabindex="0" class="learn-more">Learn More</button></a>
+                </div>
+            </div>
+    
+            <!-- Fashion Card -->
+            <div class="hidden card info">
+                <img class="center" src="https://placehold.co/900x400" alt="Fashion placeholder image">
+                <h3>Future of Fashion</h3>
+                <p>Fashion in 2050 merges wearable technology with ethical consciousness, creating clothing that adapts to environments, moods, and practical needs. Climate-responsive fabrics regulate body temperature while harvesting energy.
+                <br><br>
+                Personalized biodesign incorporates living organisms to heal skin or monitor health, while digital fashion overlays provide infinite style variations with minimal physical production.
+                </p>
+                <div class="card-footer">
+                    <div class="author">
+                        <img src="https://placehold.co/50x50" alt="Jonas">
+                        <span>Jonas</span>
+                    </div>
+                    <a href="fashion.html"><button tabindex="0" class="learn-more">Learn More</button></a>
+                </div>
             </div>
         </div>
+        
+        <!-- Time Travel Section - Contextual bridge between future and present -->
+        <section class="span time-travel-section">
+            <h2>Time Travel Perspective</h2>
+            <p class="time-context">Experience how your creative journey evolves as we move through time</p>
+            
+            <div class="timeline-container">
+                <div class="timeline-track"></div>
+                <div class="timeline-marker" id="timeline-2050">
+                    <span class="year-label">2050</span>
+                    <span class="year-description">Future Vision</span>
+                </div>
+                <div class="timeline-marker active" id="timeline-2030">
+                    <span class="year-label">2030</span>
+                    <span class="year-description">Near Future</span>
+                </div>
+                <div class="timeline-marker" id="timeline-2025">
+                    <span class="year-label">2025</span>
+                    <span class="year-description">Present Day</span>
+                </div>
+            </div>
+            
+            <div id="year-content-container">
+                <div id="scrolling-year">2030</div>
+                <div id="year-context">
+                    <p>In 2030, we'll witness the early integration of neural interfaces with creative processes, collaborative AI becoming commonplace, and the foundation of what will become the immersive technologies of 2050.</p>
+                    <button tabindex="0" id="time-travel-btn" class="time-travel-btn">Travel to 2025</button>
+                </div>
+            </div>
+        </section>
     </main>
-
 
     <footer>
         <a href="credits.html"><button tabindex="0">Meet the Team</button></a>     
@@ -86,12 +151,7 @@
     <script src="scripts/light-mode.js"></script>
     <script src="scripts/timer.js"></script>
     <script src="scripts/cards.js"></script>
-
+    <script src="scripts/index.js"></script>
 
 </body>
 </html>
-
-
-
-
-
