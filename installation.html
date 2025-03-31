@@ -29,17 +29,19 @@
     </div>
     
     <nav class="desktop-nav">  
-        <a tabindex="0" href="fashion.html">Fashion</a> 
-        <a tabindex="0" href="installation.html" class="active">Installation Art</a>
+        <a tabindex="0" href="index.html">Home</a>
+        <a tabindex="0" href="installation.html" class="active">Installation Art</a> 
         <a tabindex="0" href="music.html">Music</a>
+        <a tabindex="0" href="fashion.html">Fashion</a> 
         <a tabindex="0" href="credits.html">Meet the Team</a>
-    </nav>
+    </nav> 
     
     <div id="mobile-nav" class="mobile-nav">
         <nav>  
+            <a tabindex="0" href="index.html">Home</a>
+            <a tabindex="0" href="installation.html" class="active">Installation Art</a> 
+            <a tabindex="0" href="music.html">Music</a>
             <a tabindex="0" href="fashion.html">Fashion</a> 
-            <a tabindex="0" href="installation.html">Installation Art</a>
-            <a tabindex="0" href="music.html" class="active">Music</a>
             <a tabindex="0" href="credits.html">Meet the Team</a>
         </nav>
         <button tabindex="0" class="menu-close" id="menu-close">
@@ -128,6 +130,27 @@
 
 
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileNav = document.getElementById("mobile-nav");
+        const menuClose = document.getElementById("menu-close");
+        
+        if (menuToggle && mobileNav) {
+            menuToggle.addEventListener("click", function() {
+                mobileNav.classList.add("active");
+                document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
+            });
+        }
+        
+        if (menuClose && mobileNav) {
+            menuClose.addEventListener("click", function() {
+                mobileNav.classList.remove("active");
+                document.body.style.overflow = ""; // Re-enable scrolling
+            });
+        }
+    });
+</script>
 </html>
 
 

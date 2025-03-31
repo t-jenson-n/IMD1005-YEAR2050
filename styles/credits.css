@@ -6,7 +6,6 @@ body {
 main {
     align-items: start;
     max-width: none;
-
 }
 
 section {
@@ -19,42 +18,233 @@ section {
     gap: 30px;
 }
 
+/* Particle Background Animation */
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.background-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: particle-drift 20s infinite linear;
+}
+
+/* Dark Mode (Default) Particles */
+body:not(.lightMode) .particle {
+    background-color: rgba(148, 255, 132, 0.2);
+    box-shadow: 
+        0 0 10px rgba(148, 255, 132, 0.1),
+        inset 0 0 15px rgba(148, 255, 132, 0.1);
+}
+
+/* Light Mode Particle Variation */
+body.lightMode .particle {
+    background-color: rgba(255, 209, 88, 0.4);
+    box-shadow: 
+        0 0 15px rgba(255, 209, 88, 0.3),
+        inset 0 0 20px rgba(255, 209, 88, 0.2);
+    border: 1px solid rgba(255, 209, 88, 0.2);
+}
+
+@keyframes particle-drift {
+    0% {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateX(50px) translateY(30px) scale(1.1);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 0.6;
+    }
+}
+
 /* LAYOUTS */
-.wide  {
+.wide {
     display: flex;
     width: 100vw;
     height: 60vh;
     object-fit: cover;
     object-position: center;
 }
+
 .span {
     grid-column: span 3;    
 }
 
-
 /* CARDS */
-.card.title {
+.card {
     background: none;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.title {
     display: flex;
     align-self: center;
 }
 
-.card {
-    background: none;
-}
 .lightMode .card {
     background: none;
 }
 
+.card:hover {
+    transform: translateY(-5px) scale(1.01);
+}
 
+/* Title and Link Styles */
+.link {
+    color: var(--bright-green);
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
 
+.lightMode .link {
+    color: var(--black);
+}
 
+.link:hover {
+    color: var(--bright-yellow);
+}
 
+.cardbutton {
+    margin-top: 15px;
+}
 
-/* MEDIA QUERIES */
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 550px;
+}
+
+.mobile-nav a {
+    color: var(--bright-green);
+    font-size: 24px;
+    text-decoration: none;
+    display: block;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    border: 2px solid var(--bright-green);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.lightMode .mobile-nav a {
+    color: var(--black);
+    border-color: var(--black);
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus {
+    background-color: var(--bright-green);
+    color: var(--black);
+}
+
+.lightMode .mobile-nav a:hover,
+.lightMode .mobile-nav a:focus {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.mobile-nav a.active {
+    background-color: var(--bright-green);
+    color: var(--black);
+    font-weight: bold;
+}
+
+.lightMode .mobile-nav a.active {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.menu-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: transparent;
+    border: 2px solid var(--bright-green);
+    border-radius: 50px;
+    width: 70px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--bright-green);
+}
+
+.lightMode .menu-close {
+    border-color: var(--black);
+    color: var(--black);
+}
+
+.menu-close:hover {
+    background-color: var(--bright-green);
+    color: var(--black);
+}
+
+.lightMode .menu-close:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* Responsive Design */
 @media screen and (max-width: 900px) {
     main {
         grid-template-columns: 1fr 1fr;
+    }
+
+    section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
     }
 }
 
@@ -65,14 +255,32 @@ section {
         padding-right: 0;
         gap: 0;
     }
+
+    section {
+        grid-template-columns: 1fr;
+    }
+
     .card {
         border-radius: 0;
         grid-column: span 2;
-
     }
+
     .card h2 {
         text-align: center;
     }
 
+    .mobile-nav a {
+        font-size: 20px;
+        padding: 12px 0;
+    }
 }
 
+@media screen and (max-width: 480px) {
+    .link {
+        font-size: 1.5rem;
+    }
+
+    .mobile-nav a {
+        font-size: 18px;
+    }
+}
