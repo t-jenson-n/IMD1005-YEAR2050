@@ -90,36 +90,6 @@
         outline-offset: 2px;
     }
     
-    .light-toggle {
-        background-color: var(--bright-green);
-        border: 2px solid var(--bright-green);
-        border-radius: 50px;
-        width: 70px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        color: var(--black);
-        padding: 0;
-    }
-    
-    .light-toggle:hover {
-        background-color: transparent;
-        color: var(--bright-green);
-    }
-    
-    .lightMode .light-toggle {
-        background-color: var(--white);
-        border-color: var(--black);
-        color: var(--black);
-    }
-    
-    .lightMode .light-toggle:hover {
-        background-color: var(--yellow);
-        color: var(--black);
-    }
     
     .menu-toggle {
         background: transparent;
