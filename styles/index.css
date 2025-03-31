@@ -12,7 +12,9 @@
 
 .lightMode .timeline-marker:not(.active) .year-label::after {
     background-color: rgba(50, 50, 50, 0.3);
-}/* CORE SECTIONS */
+}
+
+/* CORE SECTIONS */
 body {
     grid-template-rows: auto;
     min-height: 100vh;

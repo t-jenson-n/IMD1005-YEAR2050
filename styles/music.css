@@ -5,12 +5,6 @@
     }
     
     :root {
-        /* Enhanced color palette with better contrast */
-        --green: #95c73d;
-        --bright-green: #a8e647; /* Brighter version for better contrast */
-        --yellow: #f0cd29;
-       --bright-yellow: #ffd639;  /* Brighter version for better contrast */
-        --black: #13120d;
         --dark-grey: #232220;
         --grey: #959594;
         /* --light-grey: #ddded9; */
