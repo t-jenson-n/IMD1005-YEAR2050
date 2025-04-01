@@ -1,17 +1,3 @@
-// // Light mode toggle functionality
-// function ToggleLightMode() {
-//     document.body.classList.toggle('lightMode');
-    
-//     // Save preference to localStorage
-//     if (document.body.classList.contains('lightMode')) {
-//         localStorage.setItem('lightMode', 'enabled');
-//         document.getElementById('btn_lightmode').textContent = 'dark_mode';
-//     } else {
-//         localStorage.setItem('lightMode', 'disabled');
-//         document.getElementById('btn_lightmode').textContent = 'light_mode';
-//     }
-// }
-
 // Music page functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
@@ -315,7 +301,6 @@ function createTrailEffect(container, x, y) {
     
     container.appendChild(trail);
     
-    // Animate and remove with GSAP if available
     if (typeof gsap !== 'undefined') {
         gsap.to(trail, {
             opacity: 0,
@@ -335,7 +320,6 @@ function createTrailEffect(container, x, y) {
     }
 }
 
-// Timeline Events
 function initTimelineEvents() {
     const timelineItems = document.querySelectorAll('.year-item');
     
@@ -369,14 +353,12 @@ function initTimelineEvents() {
     });
 }
 
-// Poll Functionality
 function initPoll() {
     const pollBtns = document.querySelectorAll('.poll-btn');
     const pollResults = document.querySelector('.poll-results');
     
     if (!pollBtns.length || !pollResults) return;
     
-    // Create initial poll results data with realistic distribution
     let results = {
         ai: 35,
         vr: 30,
@@ -384,7 +366,6 @@ function initPoll() {
         robots: 10
     };
     
-    // First check localStorage
     if (localStorage.getItem('pollResults2050')) {
         try {
             results = JSON.parse(localStorage.getItem('pollResults2050'));
@@ -393,59 +374,49 @@ function initPoll() {
         }
     }
     
-    // Update initial poll results visually right away
     updatePollResults(results);
     
-    // Show initial animation for poll results
-    if (typeof gsap !== 'undefined') {
-        gsap.from('.result-bar', {
-            width: 0,
-            duration: 1.2,
-            ease: "power2.out",
-            stagger: 0.15,
-            delay: 0.5
-        });
-    }
+    let isUpdating = false;
     
     pollBtns.forEach(btn => {
         btn.addEventListener('click', function() {
+            if (isUpdating) return; // Prevent multiple rapid clicks
+            isUpdating = true;
+            
             const option = btn.getAttribute('data-option');
             
-            // Increase the selected option by 10%
-            results[option] += 10;
-            
-            // Decrease other options proportionally
-            const otherOptions = Object.keys(results).filter(key => key !== option);
-            otherOptions.forEach(key => {
-                results[key] = Math.max(0, results[key] - (10/3)); // Distribute 10% reduction
-            });
-            
-            // Normalize to ensure total is 100%
-            const total = Object.values(results).reduce((a, b) => a + b, 0);
-            Object.keys(results).forEach(key => {
-                results[key] = Math.round((results[key] / total) * 100);
-            });
-            
-            // Save to localStorage
-            localStorage.setItem('pollResults2050', JSON.stringify(results));
-            localStorage.setItem('musicPoll2050', option);
-            
-            // Update visual display
-            updatePollResults(results);
-            
-            // Add visual feedback for selected option
+            // Show visual feedback for selected option immediately
             pollBtns.forEach(b => b.classList.remove('voted'));
             btn.classList.add('voted');
             
-            // Show animation for poll results with GSAP
-            if (typeof gsap !== 'undefined') {
-                gsap.from('.result-bar', {
-                    width: 0,
-                    duration: 0.8,
-                    ease: "power2.out",
-                    stagger: 0.1
+            setTimeout(() => {
+                // Increase the selected option by 10%
+                results[option] += 10;
+                
+                // Decrease other options proportionally
+                const otherOptions = Object.keys(results).filter(key => key !== option);
+                otherOptions.forEach(key => {
+                    results[key] = Math.max(0, results[key] - (10/3)); // Distribute 10% reduction
                 });
-            }
+                
+                // Normalize to ensure total is 100%
+                const total = Object.values(results).reduce((a, b) => a + b, 0);
+                Object.keys(results).forEach(key => {
+                    results[key] = Math.round((results[key] / total) * 100);
+                });
+                
+                // Save to localStorage
+                localStorage.setItem('pollResults2050', JSON.stringify(results));
+                localStorage.setItem('musicPoll2050', option);
+                
+                // Update visual display
+                updatePollResults(results);
+                
+                // Reset the update flag after animation completes
+                setTimeout(() => {
+                    isUpdating = false;
+                }, 600);
+            }, 50);
         });
     });
     
@@ -458,8 +429,6 @@ function initPoll() {
         }
     }
 }
-
-// Update Poll Results function
 function updatePollResults(results) {
     // Update each bar and percentage display
     Object.keys(results).forEach(key => {
@@ -467,17 +436,8 @@ function updatePollResults(results) {
         const percentage = document.getElementById(`${key}-percentage`);
         
         if (bar && percentage) {
-            // Animate the bar width with GSAP if available
-            if (typeof gsap !== 'undefined') {
-                gsap.to(bar, {
-                    width: `${results[key]}%`,
-                    duration: 0.5,
-                    ease: "power1.out"
-                });
-            } else {
-                // Fallback without GSAP
-                bar.style.width = `${results[key]}%`;
-            }
+            // Update the bar width - CSS transition handles the animation
+            bar.style.width = `${results[key]}%`;
             
             // Update the percentage text
             percentage.textContent = `${Math.round(results[key])}%`;
