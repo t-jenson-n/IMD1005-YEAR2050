@@ -538,6 +538,21 @@ h3 {
     color: var(--black);
 }
 
+.credit {
+    color: var(--grey);
+    font-size: 18px;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    transition: color 0.25s, border-color 0.25s, background 0.25s;
+    text-decoration: none;
+    margin-top: 20px;
+}
+.credit:hover {
+    color: var(--green);
+}
+.lightMode .credit:hover {
+    color: var(--yellow);
+}
 
 /* CARDS */
 .card {
