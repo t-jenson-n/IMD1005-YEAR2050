@@ -14,7 +14,6 @@ html {
     overflow: hidden;
 }
 
-/* CORE SECTIONS */
 :root {
     /* Consolidated color variables */
     --green: #a8e647;
@@ -387,25 +386,7 @@ section {
 .lightMode .section-description {
     color: var(--black);
 }
-/* 
-header {
-    padding:25px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: 50px;
-    margin-right: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-main {
-    max-width: 1000px;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    display: grid;
-    gap: 30px;
-} */
 
  /* Footer */
 footer {
@@ -452,19 +433,6 @@ footer {
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
-/* footer {
-    color: var(--white);
-    background-color: var(--dgrey);
-    text-align: center;
-    padding: 15px;
-    font-size: smaller;
-    height: auto;
-    width: 100vw;
-}
-.lightMode footer {
-    color: rgb(26, 27, 24);
-    background: none;
-} */
 
 
 /* LAYOUTS */
@@ -648,37 +616,6 @@ a {
 
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 880px) {
-    header {
-        /* display: flex; */
-        flex-wrap: wrap;
-        padding-bottom: 2px;
-    }
-    .layout {
-        grid-template-rows: auto auto 75px;
-    }
-    button{
-        margin: 2px;
-    }
-    .footer {
-        background: none;
-    }
-}
-
-/* 
-@media screen and (max-width: 700px) {
-    header {
-        padding: none;
-        margin: none;;
-    }
-    .nav {
-        padding: none;
-    }
-}   */
-
-
-
-    /* Responsive Media Queries */
     @media screen and (max-width: 1200px) {
         header {
             padding: 20px 40px;
@@ -701,13 +638,13 @@ a {
         }
     }
     
-    @media screen and (max-width: 1060px) {
+    @media screen and (max-width: 1080px) {
         header {
             padding: 20px 30px;
         }
         
         .title {
-            font-size: 50px;
+            font-size: 60px;
         }
         
         /* Hide desktop nav, show mobile menu toggle */
@@ -741,6 +678,23 @@ a {
         .year-item::after {
             left: -30px !important;
             right: auto !important;
+        }
+    }
+
+    @media screen and (max-width: 880px) {
+        header {
+            /* display: flex; */
+            flex-wrap: wrap;
+            padding-bottom: 2px;
+        }
+        .layout {
+            grid-template-rows: auto auto 75px;
+        }
+        button{
+            margin: 2px;
+        }
+        .footer {
+            background: none;
         }
     }
     
